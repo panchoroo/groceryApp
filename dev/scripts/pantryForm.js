@@ -68,67 +68,72 @@ class PantryForm extends React.Component {
                 />
 
                 {/* status */}
-                <label htmlFor="full">full</label>
-                <input
-                    id="currentStatus"
-                    type="radio"
-                    value="full"
-                    name="status"
-                    onChange={this.handleChange}
-                    defaultChecked
-                />
-                <label htmlFor="low">low</label>
-                <input
-                    id="currentStatus"
-                    type="radio"
-                    value="low"
-                    name="status"
-                    onChange={this.handleChange}
-                />
-                <label htmlFor="empty">empty</label>
-                <input
-                    id="currentStatus"
-                    type="radio"
-                    value="empty"
-                    name="status"
-                    onChange={this.handleChange}
-                />
+                <div className="row">
+                    <label htmlFor="full">full</label>
+                    <input
+                        id="currentStatus"
+                        type="radio"
+                        value="full"
+                        name="status"
+                        onChange={this.handleChange}
+                        defaultChecked
+                    />
+                    <label htmlFor="low">low</label>
+                    <input
+                        id="currentStatus"
+                        type="radio"
+                        value="low"
+                        name="status"
+                        onChange={this.handleChange}
+                    />
+                    <label htmlFor="empty">empty</label>
+                    <input
+                        id="currentStatus"
+                        type="radio"
+                        value="empty"
+                        name="status"
+                        onChange={this.handleChange}
+                    />
+                </div>
                 {/* locations */}
-                <label htmlFor="shoppers">shoppers</label>
-                <input
-                    type="radio"
-                    id="currentLocation"
-                    name="location"
-                    value="shoppers"
-                    onChange={this.handleChange}
-                    defaultChecked
-                />
-                <label htmlFor="market">market</label>
-                <input
-                    type="radio"
-                    id="currentLocation"
-                    name="location"
-                    value="market"
-                    onChange={this.handleChange}
-                />
-                <label htmlFor="butcher">butcher</label>
-                <input
-                    type="radio"
-                    id="currentLocation"
-                    name="location"
-                    value="butcher"
-                    onChange={this.handleChange}
-                />
-
+                <div className="row">
+                    <label htmlFor="shoppers">shoppers</label>
+                    <input
+                        type="radio"
+                        id="currentLocation"
+                        name="location"
+                        value="shoppers"
+                        onChange={this.handleChange}
+                        defaultChecked
+                    />
+                    <label htmlFor="market">market</label>
+                    <input
+                        type="radio"
+                        id="currentLocation"
+                        name="location"
+                        value="market"
+                        onChange={this.handleChange}
+                    />
+                    <label htmlFor="butcher">butcher</label>
+                    <input
+                        type="radio"
+                        id="currentLocation"
+                        name="location"
+                        value="butcher"
+                        onChange={this.handleChange}
+                    />
+                </div>
                 {/* autoBuy */}
-                <label htmlFor="autoBuy">Auto Buy</label>
-                <input 
-                    type="checkbox" 
-                    id="currentAutoBuy" 
-                    name="autoBuy" 
-                    onChange={this.handleCheckbox}
-                    defaultChecked
-                />
+                <div className="row">
+                    <input 
+                        type="checkbox" 
+                        id="currentAutoBuy" 
+                        name="autoBuy" 
+                        onChange={this.handleCheckbox}
+                        defaultChecked
+                    />
+                    <label htmlFor="autoBuy">Auto Buy</label>
+                </div>
                 
                 <button type="submit">Add food item</button>
             </form>

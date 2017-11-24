@@ -1,0 +1,98 @@
+/* Global styles */
+$darkColor: darkolivegreen;
+$lightColor: white;
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    // background: darken(darkolivegreen, 10);
+    background: $darkColor;
+}
+
+ul {
+    font-family: 'Satisfy', cursive;
+    button {
+        font-family: 'Open Sans', sans-serif;
+    }
+    li {
+        margin: 10px 0;
+        padding: 5px;
+    }
+}
+
+div.mainApp, form  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+#app {
+    margin: 20px;
+}
+
+form input {
+    max-width: 300px;
+    margin: 20px 0;
+}
+
+.row {
+    // display: flex;
+    flex-direction: row;
+}
+
+form div {
+    border: 2px solid lighten($darkColor, 10);
+    background: white;
+}
+
+button.addItem, button.grocList, button.pantry {
+    font-size: 2.5rem;
+    // background: darkolivegreen;
+    // background: darken($darkColor, 10);
+    // color: $lightColor;
+    // margin: 20px;
+    padding: 20px;
+}
+
+button {
+    // background: darkolivegreen;
+    background: darken($darkColor, 10);
+    color: $lightColor;
+}
+
+section {
+   background: lighten($darkColor, 10);
+   border: 5px solid $darkColor;
+   padding: 20px;
+}
+
+.status {
+    background: yellowgreen;
+}
+
+.groc {
+    list-style-type: none;
+    background: lighten($darkColor, 40);
+    padding: 20px;
+}
+
+.pantryUl {
+    background: lighten($darkColor, 40);
+    padding: 20px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.low {
+    border: 2px solid yellow;
+}
+
+.empty {
+    border: 2px solid red;
+}
+
+.full {
+    border: 2px solid green;
+}
