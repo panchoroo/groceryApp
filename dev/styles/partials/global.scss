@@ -1,5 +1,6 @@
 /* Global styles */
 $darkColor: darkolivegreen;
+// $darkColor: blue;
 $lightColor: white;
 
 body {
@@ -10,6 +11,8 @@ body {
 
 ul {
     font-family: 'Satisfy', cursive;
+    display: flex;
+    flex-direction: column;
     button {
         font-family: 'Open Sans', sans-serif;
     }
@@ -87,6 +90,7 @@ input[type="checkbox"] {
 
 .low {
     border: 2px solid yellow;
+    order: 3;
 }
 
 .empty {
@@ -96,3 +100,25 @@ input[type="checkbox"] {
 .full {
     border: 2px solid green;
 }
+
+.butcher {
+    order: 2;
+    // background: rgb(105, 206, 245);
+    // background: rgb(182, 229, 247);
+    background: rgba(182, 230, 247, 0.747);
+}
+
+.market {
+    order: 0;
+    // background: rgb(159, 250, 242);
+    // background: rgb(182, 247, 240);
+    background: rgba(182, 247, 240, 0.658);
+}
+
+.shoppers {
+    order: 1;
+    // background: rgb(214, 191, 247);
+    // background: rgb(225, 209, 248);
+    background: rgba(225, 209, 248, 0.623);
+}
+

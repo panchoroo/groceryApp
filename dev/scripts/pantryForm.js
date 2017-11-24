@@ -6,7 +6,6 @@ class PantryForm extends React.Component {
         this.state = {
             currentItem: '',
             currentDescription: '',
-            currentCategory: '',
             currentStatus: 'full',
             currentLocation: 'shoppers',
             currentAutoBuy: true
@@ -56,14 +55,6 @@ class PantryForm extends React.Component {
                     placeholder="description"
                     type="text"
                     value={this.state.currentDescription}
-                    onChange={this.handleChange}
-                />
-
-                <input
-                    id="currentCategory"
-                    placeholder="category"
-                    type="text"
-                    value={this.state.currentCategory}
                     onChange={this.handleChange}
                 />
 
@@ -122,17 +113,6 @@ class PantryForm extends React.Component {
                         value="butcher"
                         onChange={this.handleChange}
                     />
-                </div>
-                {/* autoBuy */}
-                <div className="row">
-                    <input 
-                        type="checkbox" 
-                        id="currentAutoBuy" 
-                        name="autoBuy" 
-                        onChange={this.handleCheckbox}
-                        defaultChecked
-                    />
-                    <label htmlFor="autoBuy">Auto Buy</label>
                 </div>
                 
                 <button type="submit">Add food item</button>
