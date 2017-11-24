@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import firebase from 'firebase';
 // import axios from 'axios';
-import AddToPantry from './pantry';
+import PantryForm from './pantryForm';
 import PantryItem from './pantryItem';
 import GrocList from './grocList';
+import UpdatePantry from './updatePantry';
 
 var config = {
   apiKey: "AIzaSyB7aBVzri5bUZIA-CdT8F8z8qbX7eAkNaw",
@@ -27,6 +28,10 @@ class App extends React.Component {
     this.addItem = this.addItem.bind(this);
     this.updateItem = this.updateItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
+    this.checked = this.checked.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.editItem = this.editItem.bind(this);
+    this.lowerStatus = this.lowerStatus.bind(this);
   }
 
   componentDidMount() {
@@ -54,14 +59,41 @@ class App extends React.Component {
     groceryApp.push(item);
   }
 
-  updateItem(item) {
-    console.log('item to update', item);
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log('submit', this);
+
+  }
+  lowerStatus(item, status) {
+    // console.log(item, status);
+    if (status === 'full') {
+      this.updateItem(item, { currentStatus: 'low'});
+    } else if (status === 'low') {
+      this.updateItem(item, { currentStatus: 'empty' });
+    }
+  }
+
+  editItem(item) {
+    console.log(item);
+  }
+
+  updateItem(item, updates) {
+    // console.log('item to update', item);
+    // const updates = { currentStatus: 'full' };
+    firebase.database().ref(`/grocery-app/users/amie/${item}/`).update(updates);
   }
 
   deleteItem(item) {
-    console.log('item to delete', item);
+    // console.log('item to delete', item);
     // console.log('item to delete', firebase.database().ref(`/grocery-app/users/amie/${item}`));
     firebase.database().ref(`/grocery-app/users/amie/${item}`).remove();
+  }
+
+  checked(item) {
+    console.log('item to check', item);
+    this.updateItem(item, { currentStatus: 'full' });
+    // const updates = {currentStatus: 'full'};
+    // firebase.database().ref(`/grocery-app/users/amie/${item}/`).update(updates);
   }
 
   render() {
@@ -70,20 +102,34 @@ class App extends React.Component {
     // })}
     return (
       <div>
-        <h1>Project 5</h1>
+        <h1>Pantry</h1>
         {/* <Pantry /> */}
-        <AddToPantry submitForm={this.addItem} />
+        <PantryForm submitForm={this.addItem} />
         <ul>
           {this.state.pantry.map((food) => {
             // console.log('food id',food);
-            return <PantryItem item={food} key={food.id} delete={this.deleteItem} update={this.updateItem}/>
+            return <PantryItem item={food} key={food.id} delete={this.deleteItem} edit={this.editItem} status={this.lowerStatus}/>
           })}
           {/* {this.state.pantry.map((food) => {
             return <ToDoItem item={food} />
           })} */}
 
         </ul>
-        <GrocList />
+
+        <h2>Grocery List</h2>
+        <ul>
+          {/* <form action="" onSubmit={() => this.handleSubmit(this.props.donutKey)}> */}
+          <form action="" onSubmit={this.handleSubmit}>
+            {/* onClick={() => this.props.handleClick(this.props.donutKey)} */}
+          {this.state.pantry.map((food) => {
+            // console.log('food id',food);
+            return <GrocList item={food} key={food.id} checked={this.checked}/>
+          })}
+          <button type="submit">Update pantry</button>
+          {/* <UpdatePantry submitForm={this.updateItem }/>  */}
+          </form>
+        </ul>
+
       </div>
     )
   }

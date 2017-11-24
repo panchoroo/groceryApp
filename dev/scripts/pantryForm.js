@@ -1,16 +1,6 @@
 import React from 'react';
 
-// class Pantry extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <p>pantry</p>
-//             </div>
-//         )
-//     }
-// }
-
-class AddToPantry extends React.Component {
+class PantryForm extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -28,14 +18,12 @@ class AddToPantry extends React.Component {
     }
 
     handleChange(e) {
-        // console.log(e.target.value);
         this.setState({
             [e.target.id]: e.target.value
         })
     }
 
     handleCheckbox(e) {
-        // console.log(e.target.value);
         this.setState({
             [e.target.id]: e.target.checked
         })
@@ -45,8 +33,6 @@ class AddToPantry extends React.Component {
         e.preventDefault();
         console.log('submit')
         this.props.submitForm(this.state);
-        // this.props.submitForm(this.state.currentItem);
-        // this.props.submitForm(this.state.currentItem);
         // reset the state after submitting 
         this.setState({
             currentItem: '',
@@ -77,7 +63,7 @@ class AddToPantry extends React.Component {
                     id="currentCategory"
                     placeholder="category"
                     type="text"
-                    value={this.state.currentDescription}
+                    value={this.state.currentCategory}
                     onChange={this.handleChange}
                 />
 
@@ -87,10 +73,8 @@ class AddToPantry extends React.Component {
                     id="currentStatus"
                     type="radio"
                     value="full"
-                    // value={this.state.currentStatus}
                     name="status"
                     onChange={this.handleChange}
-                    // onChange={this.handleCheckbox}
                     defaultChecked
                 />
                 <label htmlFor="low">low</label>
@@ -118,7 +102,6 @@ class AddToPantry extends React.Component {
                     value="shoppers"
                     onChange={this.handleChange}
                     defaultChecked
-                    // checked="checked"
                 />
                 <label htmlFor="market">market</label>
                 <input
@@ -143,7 +126,6 @@ class AddToPantry extends React.Component {
                     type="checkbox" 
                     id="currentAutoBuy" 
                     name="autoBuy" 
-                    // value={true} 
                     onChange={this.handleCheckbox}
                     defaultChecked
                 />
@@ -154,4 +136,4 @@ class AddToPantry extends React.Component {
     }
 }
 
-export default AddToPantry;
+export default PantryForm;
