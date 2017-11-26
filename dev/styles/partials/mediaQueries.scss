@@ -1,0 +1,7 @@
+/* media queries styles */
+
+@media (max-width: 650px) { 
+    div.mainApp{
+        flex-direction: column;
+    }
+}

@@ -9,8 +9,10 @@ const PantryItem = (props) => {
                     <span>{' - ' + props.item.currentDescription}</span>
                     <span>{' - ' + props.item.currentLocation}</span>
                 </p>
-                <button onClick={() => props.status(props.item.id, props.item.currentStatus,)}>use</button>
-                <button onClick={() => props.delete(props.item.id)}>delete</button>
+                <div className="row">
+                    <button onClick={() => props.status(props.item.id, props.item.currentStatus,)}>use</button>
+                    <button onClick={() => props.delete(props.item.id)}>delete</button>
+                </div>
             </li>
         )
     }
