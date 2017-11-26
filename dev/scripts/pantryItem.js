@@ -4,11 +4,15 @@ const PantryItem = (props) => {
     if (props.item.currentStatus !== 'empty') {
         const status = props.item.currentStatus;
         return (
-            <li className={status}>
-                <p>{props.item.currentItem}
-                    <span>{' - ' + props.item.currentDescription}</span>
-                    <span>{' - ' + props.item.currentLocation}</span>
-                </p>
+            <li className={`${status}Order`}>
+                <div className={status}>
+                    <p>{props.item.currentItem}</p>
+                    <p className="itemDesc">
+                        <span>{props.item.currentDescription ? `- ${props.item.currentDescription}` : ''}</span>
+                        <span>{` - ${props.item.currentLocation}`}</span>
+                    </p>
+                </div>
+                
                 <div className="row">
                     <button onClick={() => props.status(props.item.id, props.item.currentStatus,)}>use</button>
                     <button onClick={() => props.delete(props.item.id)}>delete</button>

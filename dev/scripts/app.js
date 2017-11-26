@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import firebase from 'firebase';
+
 import PantryForm from './pantryForm';
 import PantryItem from './pantryItem';
 import GrocList from './grocList';
-import UpdatePantry from './updatePantry';
 
 var config = {
   apiKey: "AIzaSyB7aBVzri5bUZIA-CdT8F8z8qbX7eAkNaw",
@@ -57,9 +57,9 @@ class App extends React.Component {
 
   lowerStatus(item, status) {
     if (status === 'full') {
-      this.updateItem(item, { currentStatus: 'low'});
+      this.updateItem(item, {currentStatus: 'low'});
     } else if (status === 'low') {
-      this.updateItem(item, { currentStatus: 'empty' });
+      this.updateItem(item, {currentStatus: 'empty'});
     }
   }
 
@@ -72,7 +72,7 @@ class App extends React.Component {
   }
 
   checked(item) {
-    this.updateItem(item, { currentStatus: 'full' });
+    this.updateItem(item, {currentStatus: 'full'});
   }
 
   toggleSection(e) {

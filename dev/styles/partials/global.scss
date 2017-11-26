@@ -1,12 +1,17 @@
 /* Global styles */
 
-// $darkColor: darkolivegreen;
 $darkColor: rgb(50, 50, 180);
 $lightColor: white;
+$fullColor: rgb(51, 117, 51);
+$lowColor: hsl(60, 80%, 70%);
+$shoppersColor: rgb(225, 209, 248);
+$marketColor: rgb(182, 247, 225);
+$butcherColor: rgb(182, 230, 247);
 
 body {
     font-family: 'Open Sans', sans-serif;
     background: $darkColor;
+    color: darken($darkColor, 20);
 }
 
 ul {
@@ -15,10 +20,19 @@ ul {
     flex-direction: column;
     button {
         font-family: 'Open Sans', sans-serif;
+        width: 100%;
     }
     li {
-        margin: 10px 0;
-        padding: 5px;
+        padding: 20px;
+        padding-bottom: 0;
+        list-style-type: none;
+        font-size: 1.2rem;
+        &:last-child {
+            padding-bottom: 20px;
+        }
+        p {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -51,6 +65,9 @@ form div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    button:last-child {
+        background: rgb(84, 84, 133);
+    }
 }
 
 button.addItem, button.grocList, button.pantry {
@@ -69,6 +86,8 @@ section {
     background: lighten($darkColor, 10);
     border: 5px solid $darkColor;
     padding: 20px;
+    min-width: 33.3%;
+    flex-shrink: 1;
 }
 
 .status {
@@ -76,14 +95,20 @@ section {
 }
 
 .groc {
-    list-style-type: none;
     background: lighten($darkColor, 50);
     padding: 20px;
+    li {
+        height: 115px;
+        margin-bottom: 20px;
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
 }
 
 .pantryUl {
     background: lighten($darkColor, 40);
-    padding: 20px;
+    padding:0;
 }
 
 input[type="checkbox"] {
@@ -91,57 +116,77 @@ input[type="checkbox"] {
 }
 
 .low {
-    border: 2px solid yellow;
-    order: 3;
+    border: 2px solid $lowColor;
+    background: lighten($lowColor, 20);
 }
 
-.empty {
-    border: 2px solid red;
+.lowOrder {
+    order: 1;
 }
 
 .full {
-    border: 2px solid green;
+    border: 2px solid lighten($fullColor, 10);
+    background: lighten($fullColor, 40);
+}
+
+.low, .full, .empty {
+    padding-left: 20px;
+}
+
+.empty {
+    border: 2px dotted rgb(247, 120, 46);
 }
 
 .butcher {
     order: 2;
-    // background: rgb(105, 206, 245);
-    // background: rgb(182, 229, 247);
-    background: rgba(182, 230, 247, 0.747);
+    background: $butcherColor;
 }
 
 .market {
-    order: 0;
-    // background: rgb(159, 250, 242);
-    // background: rgb(182, 247, 240);
-    background: rgba(182, 247, 240, 0.658);
+    order: 1;
+    background: $marketColor;
+}
+
+.bulk {
+    background: rgb(248, 227, 193);
 }
 
 .shoppers {
-    order: 1;
-    // background: rgb(214, 191, 247);
-    // background: rgb(225, 209, 248);
-    background: rgba(225, 209, 248, 0.623);
+    order: 0;
+    background: $shoppersColor;
 }
 
 .radio {
     display: flex;
     justify-content: space-between;
+    align-content: space-between;
+    min-height: 125px;
     flex-wrap: wrap;
     background: lighten($darkColor, 20);
     margin-bottom: 20px;
+    padding: 15px;
     font-size: 1.1rem;
-    &:last-child() {
-        background: yellow;
-    }
 }
 
 .radioInput {
     min-width: 125px;
     padding: 5px;
-    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    input {
+        margin: 0;
+        align-self: center;
+    }
+    label {
+        margin-right: 8px;
+    }
 }
 
-label {
-    margin-right: 5px;
+.itemDesc {
+    margin: 10px 0 20px 30px;
+}
+
+.hidden {
+    display: none;
 }

@@ -12,8 +12,6 @@ class PantryForm extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleCheckbox = this.handleCheckbox.bind(this);
-
     }
 
     handleChange(e) {
@@ -21,13 +19,6 @@ class PantryForm extends React.Component {
             [e.target.id]: e.target.value
         })
     }
-
-    // handleCheckbox(e) {
-    //     console
-    //     this.setState({
-    //         [e.target.id]: e.target.checked
-    //     })
-    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -40,21 +31,22 @@ class PantryForm extends React.Component {
         })
     }
 
-
     render() {
         return (
             <form action="" onSubmit={this.handleSubmit}>
+                <label htmlFor="currentItem" className="hidden">enter a new food item</label>
                 <input
                     id="currentItem"
-                    placeholder="item"
+                    placeholder="enter a new food item"
                     type="text"
                     value={this.state.currentItem}
                     onChange={this.handleChange}
                     required="required"
                 />
+                <label htmlFor="currentDescription" className="hidden">optional description</label>
                 <input
                     id="currentDescription"
-                    placeholder="description"
+                    placeholder="description (optional)"
                     type="text"
                     value={this.state.currentDescription}
                     onChange={this.handleChange}
@@ -114,6 +106,16 @@ class PantryForm extends React.Component {
                             id="currentLocation"
                             name="location"
                             value="market"
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                    <div className="radioInput">
+                        <label htmlFor="bulk">bulk store</label>
+                        <input
+                            type="radio"
+                            id="currentLocation"
+                            name="location"
+                            value="bulk"
                             onChange={this.handleChange}
                         />
                     </div>
