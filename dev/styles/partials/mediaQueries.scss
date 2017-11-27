@@ -1,14 +1,33 @@
 /* media queries styles */
 
+@media (max-width: 1040px) { 
+    .radio {
+        justify-content: center;
+    }
+}
+
 @media (max-width: 980px) { 
     button.addItem, button.grocList, button.pantry {
         height: 152px;
     }
 }
 
-@media (max-width: 725px) { 
+@media (max-width: 900px) { 
     div.mainApp{
         flex-direction: column;
     }
+    section {
+        min-height: 33.33vh;
+    }
+    .radioInput {
+        height: 40px;
+        align-self: center;
+    }
 }
 
+@media (max-height: 580px) { 
+    button.addItem, button.grocList, button.pantry {
+        height: 60px;
+        padding: 0px;
+    }
+}

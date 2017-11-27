@@ -34,23 +34,25 @@ class PantryForm extends React.Component {
     render() {
         return (
             <form action="" onSubmit={this.handleSubmit}>
-                <label htmlFor="currentItem" className="hidden">enter a new food item</label>
-                <input
-                    id="currentItem"
-                    placeholder="enter a new food item"
-                    type="text"
-                    value={this.state.currentItem}
-                    onChange={this.handleChange}
-                    required="required"
-                />
-                <label htmlFor="currentDescription" className="hidden">optional description</label>
-                <input
-                    id="currentDescription"
-                    placeholder="description (optional)"
-                    type="text"
-                    value={this.state.currentDescription}
-                    onChange={this.handleChange}
-                />
+                <div className="textInputs">
+                    <label htmlFor="currentItem" className="hidden">enter a new food item</label>
+                    <input
+                        id="currentItem"
+                        placeholder="enter a new food item"
+                        type="text"
+                        value={this.state.currentItem}
+                        onChange={this.handleChange}
+                        required="required"
+                    />
+                    <label htmlFor="currentDescription" className="hidden">optional description</label>
+                    <input
+                        id="currentDescription"
+                        placeholder="description (optional)"
+                        type="text"
+                        value={this.state.currentDescription}
+                        onChange={this.handleChange}
+                    />
+                </div>
 
                 {/* status */}
                 <div className="radio">

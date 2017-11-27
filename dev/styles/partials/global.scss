@@ -1,6 +1,7 @@
 /* Global styles */
 
-$darkColor: rgb(50, 50, 180);
+$darkColorText: rgb(31, 77, 194);
+$darkColor: rgba(31, 77, 194, 0.85);
 $lightColor: white;
 $fullColor: rgb(51, 117, 51);
 $lowColor: hsl(60, 80%, 70%);
@@ -8,10 +9,22 @@ $shoppersColor: rgb(225, 209, 248);
 $marketColor: rgb(182, 247, 225);
 $butcherColor: rgb(182, 230, 247);
 
+html {
+    background: darken($darkColor, 20);
+}
 body {
+    margin: 0px;
     font-family: 'Open Sans', sans-serif;
-    background: $darkColor;
-    color: darken($darkColor, 20);
+    background-image: url('http://weclipart.com/gimg/7F8CCA780CC15D89/pantry-clipart-Ride8zyi9.jpeg');
+    background-position: top;
+    background-repeat: none;
+    background-size: 200vh;
+    color: darken($darkColorText, 20);
+    min-height: 100vh;
+}
+
+section {
+    min-height: 100vh;
 }
 
 ul {
@@ -39,15 +52,10 @@ ul {
 div.mainApp, form  {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
 }
 
 form {
     flex-direction: column;
-}
-
-#app {
-    margin: 20px;
 }
 
 form input {
@@ -57,8 +65,7 @@ form input {
 }
 
 form div {
-    border: 2px solid lighten($darkColor, 10);
-    background: white;
+    background: $lightColor;
 }
 
 .row {
@@ -66,7 +73,7 @@ form div {
     flex-direction: row;
     justify-content: space-between;
     button:last-child {
-        background: rgb(84, 84, 133);
+        background: lighten($darkColor, 10);
     }
 }
 
@@ -95,7 +102,7 @@ section {
 }
 
 .groc {
-    background: lighten($darkColor, 50);
+    background: lighten($darkColor, 20);
     padding: 20px;
     li {
         height: 115px;
@@ -106,9 +113,23 @@ section {
     }
 }
 
-.pantryUl {
-    background: lighten($darkColor, 40);
+.pantryUl, .textInputs {
+    background: lighten($darkColor, 20);
     padding:0;
+}
+
+.textInputs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px 0;
+    input {
+        border: 2px solid $darkColor;
+        width: 100%;
+        margin: 0;
+        padding: 5px;
+    }
 }
 
 input[type="checkbox"] {
@@ -134,7 +155,7 @@ input[type="checkbox"] {
 }
 
 .empty {
-    border: 2px dotted rgb(247, 120, 46);
+    border: 3px solid rgb(247, 120, 46);
 }
 
 .butcher {
@@ -174,6 +195,7 @@ input[type="checkbox"] {
     display: flex;
     justify-content: center;
     align-content: space-between;
+    border: 2px solid lighten($darkColor, 10);
     input {
         margin: 0;
         align-self: center;
