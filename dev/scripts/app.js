@@ -25,6 +25,7 @@ class App extends React.Component {
       addItemSection: false, 
       grocListSection: false, 
       pantrySection: false,
+      instructionsSection: true,
     }
     this.addItem = this.addItem.bind(this);
     this.updateItem = this.updateItem.bind(this);
@@ -92,6 +93,20 @@ class App extends React.Component {
   render() {
     return (
       <div className="mainApp">
+        <section className="instructions">
+            <button className="instructions" id="instructions" onClick={this.toggleSection}>Instructions</button>
+            {this.state.instructionsSection ? <ol className="instructionsList"> 
+                <li>Add food items to your pantry</li>
+                <p> add a name, a description (optional), where you purchse the  item, and how much you have (full, low, empty)</p>
+                
+                <li>As you use items, click use to go from full to low to empty</li>
+                <p>when items are running low, they will automatically be added to the grocery list.  When items are empty, they are no longer in your pantry </p>
+                
+                <li>Go shopping and click the items as you buy them</li> 
+                <p>When you check an item off your grocery list, it will automatically be removed from the list and added to your pantry (set to full)</p>
+            </ol> : ''}
+        </section>
+      
 
         <section className="grocList">
           <button className="grocList" id="grocList" onClick={this.toggleSection}>Grocery List</button>
@@ -102,10 +117,10 @@ class App extends React.Component {
           </ul> : ''}
         </section>
 
-        <section className="addItem">
+        {/* <section className="addItem">
           <button className="addItem" id="addItem" onClick={this.toggleSection}>Add Item</button>
           {this.state.addItemSection ? <PantryForm submitForm={this.addItem} /> : ''}
-        </section>
+        </section> */}
 
         <section className="pantry">
           <button className="pantry" id="pantry" onClick={this.toggleSection}>Pantry</button>    
