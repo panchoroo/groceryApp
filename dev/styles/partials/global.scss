@@ -17,7 +17,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-image: url('http://weclipart.com/gimg/7F8CCA780CC15D89/pantry-clipart-Ride8zyi9.jpeg');
     background-position: top;
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: 200vh;
     color: darken($darkColorText, 20);
     min-height: 100vh;
@@ -31,18 +31,16 @@ ul {
     font-family: 'Satisfy', cursive;
     display: flex;
     flex-direction: column;
+    padding: 20px 20px 0 20px;
+    background: yellow;
     button {
         font-family: 'Open Sans', sans-serif;
         width: 100%;
     }
     li {
-        padding: 20px;
-        padding-bottom: 0;
+        margin-bottom: 20px;
         list-style-type: none;
         font-size: 1.2rem;
-        &:last-child {
-            padding-bottom: 20px;
-        }
         p {
             margin-bottom: 0;
         }
@@ -103,7 +101,7 @@ section {
 
 .groc {
     background: lighten($darkColor, 20);
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     li {
         height: 115px;
         margin-bottom: 20px;
@@ -112,7 +110,6 @@ section {
 
 .pantryUl, .textInputs {
     background: lighten($darkColor, 20);
-    padding:0;
 }
 
 .textInputs {
