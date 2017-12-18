@@ -93,20 +93,24 @@ class App extends React.Component {
   render() {
     return (
       <div className="mainApp">
+            {/* <button className="instructionsBtn" id="instructions" onClick={this.toggleSection}>Instructions</button> */}
         <section className="instructions">
-            <button className="instructions" id="instructions" onClick={this.toggleSection}>Instructions</button>
-            {this.state.instructionsSection ? <ol className="instructionsList"> 
+            {this.state.instructionsSection ? 
+            <div>
+              <ol className="instructionsList"> 
+              <h2>Instructions:</h2>
                 <li>Add food items to your pantry</li>
-                <p> add a name, a description (optional), where you purchse the  item, and how much you have (full, low, empty)</p>
+                <p> add a name, a description (optional), where to purchse the  item, and how much you have (full, low, empty)</p>
                 
-                <li>As you use items, click use to go from full to low to empty</li>
-                <p>when items are running low, they will automatically be added to the grocery list.  When items are empty, they are no longer in your pantry </p>
+                <li>As you use items, click 'use' to change the item's quantity from full, to low, to empty</li>
+                <p>When items are running low, they will automatically be added to the grocery list.  When items are empty, they are outlined in red on the grocery list and no longer appear in your pantry </p>
                 
                 <li>Go shopping and click the items as you buy them</li> 
                 <p>When you check an item off your grocery list, it will automatically be removed from the list and added to your pantry (set to full)</p>
-            </ol> : ''}
+              </ol></div> : ''}
+          {this.state.instructionsSection ? <button className="instructionsBtn" id="instructions" onClick={this.toggleSection}>Close</button>
+            : <button className="instructionsBtn" id="instructions" onClick={this.toggleSection}>Instructions</button>}
         </section>
-      
 
         <section className="grocList">
           <button className="grocList" id="grocList" onClick={this.toggleSection}>Grocery List</button>
@@ -117,11 +121,6 @@ class App extends React.Component {
           </ul> : ''}
         </section>
 
-        {/* <section className="addItem">
-          <button className="addItem" id="addItem" onClick={this.toggleSection}>Add Item</button>
-          {this.state.addItemSection ? <PantryForm submitForm={this.addItem} /> : ''}
-        </section> */}
-
         <section className="pantry">
           <button className="pantry" id="pantry" onClick={this.toggleSection}>Pantry</button>    
           {this.state.pantrySection ? <ul className="pantryUl">
@@ -129,6 +128,14 @@ class App extends React.Component {
               return <PantryItem item={food} key={food.id} delete={this.deleteItem} edit={this.editItem} status={this.lowerStatus} />
             })}
           </ul> : ''}
+        </section>
+
+        <section className="addItem">
+          {this.state.addItemSection ? <PantryForm submitForm={this.addItem} /> : ''}
+  
+          {this.state.addItemSection ? <button className="addItemBtn" id="addItem" onClick={this.toggleSection}>Close</button>
+            : <button className="addItemBtn" id="addItem" onClick={this.toggleSection}>Add Item</button>}
+          
         </section>
 
       </div>
