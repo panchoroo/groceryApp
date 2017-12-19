@@ -26,6 +26,7 @@ class App extends React.Component {
       grocListSection: false, 
       pantrySection: false,
       instructionsSection: true,
+      sectionHundoP: "show",
     }
     this.addItem = this.addItem.bind(this);
     this.updateItem = this.updateItem.bind(this);
@@ -33,6 +34,7 @@ class App extends React.Component {
     this.checked = this.checked.bind(this);
     this.lowerStatus = this.lowerStatus.bind(this);
     this.toggleSection = this.toggleSection.bind(this);
+    this.toggleHundoP = this.toggleHundoP.bind(this);
   }
 
   componentDidMount() {
@@ -79,22 +81,35 @@ class App extends React.Component {
   toggleSection(e) {
     e.preventDefault();
     const sectionState = e.target.id+'Section'
+    if (sectionState === 'addItemSection' || sectionState === 'instructionsSection'){
+      console.log('yes its working');
+      
+    }
     if (!this.state[sectionState]) {
       this.setState({
         [sectionState]: true
       })
+
     } else {
       this.setState({
         [sectionState]: false
       })
     }
   }
+
+  getInitialState() {
+    return { "sectionHundoP": "hidden" };
+  }
+  toggleHundoP() {
+    var css = (this.state.sectionHundoP === "hidden") ? "show" : "hidden";
+    this.setState({ "sectionHundoP": css });
+  }
   
   render() {
     return (
       <div className="mainApp">
             {/* <button className="instructionsBtn" id="instructions" onClick={this.toggleSection}>Instructions</button> */}
-        <section className="instructions">
+        <section className={`instructions ${this.state.sectionHundoP}`}>
             {this.state.instructionsSection ? 
             <div>
               <ol className="instructionsList"> 
@@ -132,7 +147,7 @@ class App extends React.Component {
 
         <section className="addItem">
           {this.state.addItemSection ? <PantryForm submitForm={this.addItem} /> : ''}
-  
+
           {this.state.addItemSection ? <button className="addItemBtn" id="addItem" onClick={this.toggleSection}>Close</button>
             : <button className="addItemBtn" id="addItem" onClick={this.toggleSection}>Add Item</button>}
           
