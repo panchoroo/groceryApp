@@ -23,23 +23,28 @@
     div.mainApp{
         flex-direction: column;
     }
-    // section {
-    //     min-height: 33.33vh;
-    // }
     .radioInput {
         height: 40px;
         align-self: center;
     }
     button.grocList, button.pantry {
-        height: 45vh;
+        height: 25vh;
     }
+    .grocList, .pantry {
+        order: 1;
+        min-height: 35.5vh;
+    }
+    section.grocList {
+        margin-top: 15vh;
+    }
+    .addItem, 
     .instructions {
-        right: 0;
-        max-width: 17%;
+        width: 50%;
+        max-width: 100%;
+        order: 0;
+        min-height: 15vh;
     }
-    .addItem {
-        top: 200px;
-    }
+    
 }
 
 @media (max-height: 580px) { 
