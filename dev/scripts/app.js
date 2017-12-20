@@ -26,7 +26,8 @@ class App extends React.Component {
       grocListSection: false, 
       pantrySection: false,
       instructionsSection: true,
-      sectionHundoP: "show",
+      hundoPInstr: 'hundoP',
+      hundoPAddItem: '',
     }
     this.addItem = this.addItem.bind(this);
     this.updateItem = this.updateItem.bind(this);
@@ -81,19 +82,47 @@ class App extends React.Component {
   toggleSection(e) {
     e.preventDefault();
     const sectionState = e.target.id+'Section'
-    if (sectionState === 'addItemSection' || sectionState === 'instructionsSection'){
-      console.log('yes its working');
+    if (sectionState === 'instructionsSection'){
+      if (!this.state[sectionState]) {
+        this.setState({
+          [sectionState]: true,
+          hundoPInstr: 'hundoP'
+        })
+
+      } else {
+        this.setState({
+          [sectionState]: false,
+          hundoPInstr: ''
+        })
+      }
       
-    }
-    if (!this.state[sectionState]) {
-      this.setState({
-        [sectionState]: true
-      })
+    } else if (sectionState === 'addItemSection') {
+      if (!this.state[sectionState]) {
+        this.setState({
+          [sectionState]: true,
+          hundoPAddItem: 'hundoP'
+        })
+
+      } else {
+        this.setState({
+          [sectionState]: false,
+          hundoPAddItem: ''
+        })
+      }
 
     } else {
-      this.setState({
-        [sectionState]: false
-      })
+      if (!this.state[sectionState]) {
+        this.setState({
+          [sectionState]: true,
+          sectionHundoP: 'hundoP'
+        })
+
+      } else {
+        this.setState({
+          [sectionState]: false,
+          sectionHundoP: ''
+        })
+      }
     }
   }
 
@@ -109,13 +138,13 @@ class App extends React.Component {
     return (
       <div className="mainApp">
             {/* <button className="instructionsBtn" id="instructions" onClick={this.toggleSection}>Instructions</button> */}
-        <section className={`instructions ${this.state.sectionHundoP}`}>
+        <section className={`instructions ${this.state.hundoPInstr}`}>
             {this.state.instructionsSection ? 
             <div>
               <ol className="instructionsList"> 
               <h2>Instructions:</h2>
                 <li>Add food items to your pantry</li>
-                <p> add a name, a description (optional), where to purchse the  item, and how much you have (full, low, empty)</p>
+                <p>Add a name, a description (optional), where to purchse the  item, and how much you have (full, low, empty)</p>
                 
                 <li>As you use items, click 'use' to change the item's quantity from full, to low, to empty</li>
                 <p>When items are running low, they will automatically be added to the grocery list.  When items are empty, they are outlined in red on the grocery list and no longer appear in your pantry </p>
@@ -136,6 +165,7 @@ class App extends React.Component {
           </ul> : ''}
         </section>
 
+
         <section className="pantry">
           <button className="pantry" id="pantry" onClick={this.toggleSection}>Pantry</button>    
           {this.state.pantrySection ? <ul className="pantryUl">
@@ -145,7 +175,7 @@ class App extends React.Component {
           </ul> : ''}
         </section>
 
-        <section className="addItem">
+        <section className={`addItem ${this.state.hundoPAddItem}`}>
           {this.state.addItemSection ? <PantryForm submitForm={this.addItem} /> : ''}
 
           {this.state.addItemSection ? <button className="addItemBtn" id="addItem" onClick={this.toggleSection}>Close</button>
