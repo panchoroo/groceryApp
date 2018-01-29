@@ -1,0 +1,31 @@
+/* pantry styles */
+
+.status {
+    background: yellowgreen;
+}
+
+.pantryUl, .textInputs {
+    background: lighten($darkColor, 20);
+}
+
+.low {
+    border: 2px solid $lowColor;
+    background: lighten($lowColor, 20);
+}
+
+.lowOrder {
+    order: 1;
+}
+
+.full {
+    border: 2px solid lighten($fullColor, 10);
+    background: lighten($fullColor, 40);
+}
+
+.low, .full, .empty {
+    padding-left: 20px;
+}
+
+.empty {
+    border: 3px solid rgb(247, 120, 46);
+}

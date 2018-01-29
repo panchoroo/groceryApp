@@ -1,7 +1,9 @@
 /* Global styles */
 
-$darkColorText: rgb(31, 77, 194);
-$darkColor: rgba(31, 77, 194, 0.85);
+$darkColorText: rgb(88, 94, 110);
+// $darkColorText: rgb(31, 77, 194);
+// $darkColor: rgba(31, 77, 194, 0.85);
+$darkColor: rgba(111, 115, 128, 0.548);
 $lightColor: white;
 $fullColor: rgb(51, 117, 51);
 $lowColor: hsl(60, 80%, 70%);
@@ -10,22 +12,31 @@ $marketColor: rgb(182, 247, 225);
 $butcherColor: rgb(182, 230, 247);
 
 html {
-    background: darken($darkColor, 20);
+    // background: darken($darkColor, 20);
 }
+
 body {
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
-    background-image: url('http://weclipart.com/gimg/7F8CCA780CC15D89/pantry-clipart-Ride8zyi9.jpeg');
+    // background-image: url('http://weclipart.com/gimg/7F8CCA780CC15D89/pantry-clipart-Ride8zyi9.jpeg');
+    // Photo by ja ma on Unsplash
+    background-image: url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d060132f422f18d7fd59c4b5d0eb8e06&auto=format&fit=crop&w=1500&q=80');
     background-position: top;
-    background-repeat: no-repeat;
-    background-size: 200vh;
+    // background-repeat: no-repeat;
+    // background-size: 200vh;
     color: darken($darkColorText, 20);
     min-height: 100vh;
 }
 
 section {
-    min-height: 100vh;
+    // min-height: 100vh;
+    background: lighten($darkColor, 10);
+    border: 5px solid $darkColor;
+    padding: 20px;
+    min-width: 33%;
+    flex-shrink: 1;
 }
+
 
 ul {
     font-family: 'Satisfy', cursive;
@@ -74,43 +85,25 @@ form div {
         background: lighten($darkColor, 10);
     }
 }
-
-button.addItem, button.grocList, button.pantry {
+// button.addItem,
+button.grocList, button.pantry {
     font-size: 2.5rem;
-    padding: 20px;
+    // padding: 20px;
     width: 100%;
     max-width: 400px;
 }
 
 button {
+    padding: 20px 30px;
     background: darken($darkColor, 10);
     color: $lightColor;
 }
 
-section {
-    background: lighten($darkColor, 10);
-    border: 5px solid $darkColor;
-    padding: 20px;
-    min-width: 33%;
-    flex-shrink: 1;
+.hidden {
+    display: none;
 }
 
-.status {
-    background: yellowgreen;
-}
-
-.groc {
-    background: lighten($darkColor, 20);
-    padding: 20px 20px 0 20px;
-    li {
-        height: 115px;
-        margin-bottom: 20px;
-    }
-}
-
-.pantryUl, .textInputs {
-    background: lighten($darkColor, 20);
-}
+/* add Item styles */
 
 .textInputs {
     display: flex;
@@ -124,52 +117,6 @@ section {
         margin: 0;
         padding: 5px;
     }
-}
-
-input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.low {
-    border: 2px solid $lowColor;
-    background: lighten($lowColor, 20);
-}
-
-.lowOrder {
-    order: 1;
-}
-
-.full {
-    border: 2px solid lighten($fullColor, 10);
-    background: lighten($fullColor, 40);
-}
-
-.low, .full, .empty {
-    padding-left: 20px;
-}
-
-.empty {
-    border: 3px solid rgb(247, 120, 46);
-}
-
-.butcher {
-    order: 1;
-    background: $butcherColor;
-}
-
-.market {
-    order: 3;
-    background: $marketColor;
-}
-
-.bulk {
-    order: 0;
-    background: rgb(248, 227, 193);
-}
-
-.shoppers {
-    order: 2;
-    background: $shoppersColor;
 }
 
 .radio {
@@ -197,6 +144,7 @@ input[type="checkbox"] {
     }
     label {
         margin-right: 8px;
+        
     }
 }
 
@@ -204,13 +152,8 @@ input[type="checkbox"] {
     margin: 10px 0 20px 30px;
 }
 
-.hidden {
-    display: none;
-}
-
 .addItem, 
 .instructions {
-    // width: 50%;
     min-width: 17%;
     z-index: 1;
     position: absolute;
@@ -230,11 +173,10 @@ input[type="checkbox"] {
     padding: 20px 20px 20px 40px;
     color: white;
     border: 1px solid white;
+
 }
 
 button[type="submit"] {
     margin-bottom: 20px;
 }
-
-
 
