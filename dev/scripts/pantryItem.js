@@ -6,10 +6,9 @@ const PantryItem = (props) => {
         return (
             <li className={`${status}Order`}>
                 <div className={status}>
-                    <p>{props.item.currentItem}</p>
-                    <p className="itemDesc">
-                        <span>{props.item.currentDescription ? `- ${props.item.currentDescription}` : ''}</span>
-                        <span>{` - ${props.item.currentLocation}`}</span>
+                    <p>{props.item.currentItem}
+                        <span className="itemDesc">{props.item.currentDescription ? `- ${props.item.currentDescription}` : ''}</span>
+                        <span className="itemDesc">{` - ${props.item.currentLocation}`}</span>
                     </p>
                 </div>
                 

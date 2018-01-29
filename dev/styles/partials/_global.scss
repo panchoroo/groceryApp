@@ -1,15 +1,29 @@
 /* Global styles */
 
-$darkColorText: rgb(88, 94, 110);
 // $darkColorText: rgb(31, 77, 194);
 // $darkColor: rgba(31, 77, 194, 0.85);
+$darkColorText: rgb(88, 94, 110);
 $darkColor: rgba(111, 115, 128, 0.548);
 $lightColor: white;
-$fullColor: rgb(51, 117, 51);
-$lowColor: hsl(60, 80%, 70%);
-$shoppersColor: rgb(225, 209, 248);
-$marketColor: rgb(182, 247, 225);
-$butcherColor: rgb(182, 230, 247);
+// $fullColor: rgb(51, 117, 51);
+$fullColor: rgb(51, 117, 68);
+// $lowColor: rgb(239, 239, 117);
+$lowColor: rgb(250, 241, 110);
+$redColor:rgb(201, 91, 91);
+
+// $shoppersColor: rgba(226, 211, 255, 0.507);
+// $marketColor: rgba(200, 250, 232, 0.514);
+// $butcherColor: rgba(211, 245, 255, 0.514);
+// $bulkColor: rgba(248, 227, 193, 0.534);
+
+$shoppersColor: rgba(245, 200, 225, 0.9);
+$marketColor: rgba(170, 151, 221, 0.9);
+$butcherColor: rgba(165, 229, 238, 0.9);
+$bulkColor: rgb(240, 194, 157);
+
+// $shoppersColor: rgb(225, 209, 248);
+// $marketColor: rgb(182, 247, 225);
+// $butcherColor: rgb(182, 230, 247);
 
 html {
     // background: darken($darkColor, 20);
@@ -35,6 +49,7 @@ section {
     padding: 20px;
     min-width: 33%;
     flex-shrink: 1;
+    margin: 10px;
 }
 
 
@@ -43,7 +58,7 @@ ul {
     display: flex;
     flex-direction: column;
     padding: 20px 20px 0 20px;
-    background: yellow;
+    // background: yellow;
     button {
         font-family: 'Open Sans', sans-serif;
         width: 100%;
@@ -58,7 +73,7 @@ ul {
     }
 }
 
-div.mainApp, form  {
+div.groceryApp, form  {
     display: flex;
     justify-content: center;
 }
@@ -85,18 +100,25 @@ form div {
         background: lighten($darkColor, 10);
     }
 }
-// button.addItem,
+
+.addItemBtn, .instructionsBtn {
+    margin: 20px;
+    text-transform: uppercase;
+}
+
 button.grocList, button.pantry {
     font-size: 2.5rem;
     // padding: 20px;
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
+    text-transform: uppercase;
 }
 
 button {
     padding: 20px 30px;
     background: darken($darkColor, 10);
     color: $lightColor;
+    border-radius: 10px;
 }
 
 .hidden {
@@ -144,7 +166,7 @@ button {
     }
     label {
         margin-right: 8px;
-        
+        text-transform: capitalize;
     }
 }
 
@@ -154,10 +176,13 @@ button {
 
 .addItem, 
 .instructions {
-    min-width: 17%;
+    // min-width: 100%;
     z-index: 1;
     position: absolute;
     top: 0;
+    // padding: 20px;
+    background: $darkColor;
+    
 }
 
 .instructions {
@@ -178,5 +203,10 @@ button {
 
 button[type="submit"] {
     margin-bottom: 20px;
+}
+
+.modal {
+    width: 100%;
+    height: calc(100vh - 120px);
 }
 

@@ -8,6 +8,10 @@
     background: lighten($darkColor, 20);
 }
 
+.pantryUl button {
+    text-transform: uppercase;
+}
+
 .low {
     border: 2px solid $lowColor;
     background: lighten($lowColor, 20);
@@ -26,6 +30,3 @@
     padding-left: 20px;
 }
 
-.empty {
-    border: 3px solid rgb(247, 120, 46);
-}

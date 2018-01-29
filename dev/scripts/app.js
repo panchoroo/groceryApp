@@ -35,7 +35,7 @@ class App extends React.Component {
     this.checked = this.checked.bind(this);
     this.lowerStatus = this.lowerStatus.bind(this);
     this.toggleSection = this.toggleSection.bind(this);
-    this.toggleHundoP = this.toggleHundoP.bind(this);
+    // this.toggleHundoP = this.toggleHundoP.bind(this);
   }
 
   componentDidMount() {
@@ -82,65 +82,47 @@ class App extends React.Component {
   toggleSection(e) {
     e.preventDefault();
     const sectionState = e.target.id+'Section'
-    if (sectionState === 'instructionsSection'){
-      if (!this.state[sectionState]) {
-        this.setState({
-          [sectionState]: true,
-          hundoPInstr: 'hundoP'
-        })
 
-      } else {
-        this.setState({
-          [sectionState]: false,
-          hundoPInstr: ''
-        })
-      }
+    // if (sectionState === 'instructionsSection' || sectionState === 'addItemSection'){
+    //   console.log('if instr or addItem')
       
-    } else if (sectionState === 'addItemSection') {
+    //   if (this.state[sectionState]) {
+        
+    //     console.log('yes sectionState')
+    //     this.setState({
+    //       [sectionState]: false
+    //     })
+
+    //   } else {
+    //     this.setState({
+    //       [sectionState]: true
+    //     })
+    //   }
+
+    // } else {
+      // console.log('else')
+
       if (!this.state[sectionState]) {
         this.setState({
           [sectionState]: true,
-          hundoPAddItem: 'hundoP'
         })
 
       } else {
         this.setState({
           [sectionState]: false,
-          hundoPAddItem: ''
         })
       }
-
-    } else {
-      if (!this.state[sectionState]) {
-        this.setState({
-          [sectionState]: true,
-          sectionHundoP: 'hundoP'
-        })
-
-      } else {
-        this.setState({
-          [sectionState]: false,
-          sectionHundoP: ''
-        })
-      }
-    }
+    // }
   }
 
-  getInitialState() {
-    return { "sectionHundoP": "hidden" };
-  }
-  toggleHundoP() {
-    var css = (this.state.sectionHundoP === "hidden") ? "show" : "hidden";
-    this.setState({ "sectionHundoP": css });
-  }
   
   render() {
     return (
-      <div className="mainApp">
+      <div className="groceryApp">
             {/* <button className="instructionsBtn" id="instructions" onClick={this.toggleSection}>Instructions</button> */}
-        <section className={`instructions ${this.state.hundoPInstr}`}>
+        <div className={`instructions`}>
             {this.state.instructionsSection ? 
-            <div>
+            <div className="modal">
               <ol className="instructionsList"> 
               <h2>Instructions:</h2>
                 <li>Add food items to your pantry</li>
@@ -151,10 +133,13 @@ class App extends React.Component {
                 
                 <li>Go shopping and click the items as you buy them</li> 
                 <p>When you check an item off your grocery list, it will automatically be removed from the list and added to your pantry (set to full)</p>
-              </ol></div> : ''}
+              </ol>
+            </div> : ''}
+
           {this.state.instructionsSection ? <button className="instructionsBtn" id="instructions" onClick={this.toggleSection}>Close</button>
             : <button className="instructionsBtn" id="instructions" onClick={this.toggleSection}>Instructions</button>}
-        </section>
+          
+        </div>
 
         <section className="grocList">
           <button className="grocList" id="grocList" onClick={this.toggleSection}>Grocery List</button>
@@ -175,13 +160,16 @@ class App extends React.Component {
           </ul> : ''}
         </section>
 
-        <section className={`addItem ${this.state.hundoPAddItem}`}>
-          {this.state.addItemSection ? <PantryForm submitForm={this.addItem} /> : ''}
+        <div className={`addItem`}>
+          {this.state.addItemSection ? 
 
-          {this.state.addItemSection ? <button className="addItemBtn" id="addItem" onClick={this.toggleSection}>Close</button>
-            : <button className="addItemBtn" id="addItem" onClick={this.toggleSection}>Add Item</button>}
-          
-        </section>
+          <div className="modal">
+            <PantryForm submitForm={this.addItem} /> 
+          </div> : ''}
+
+            {this.state.addItemSection ? <button className="addItemBtn" id="addItem" onClick={this.toggleSection}>Close</button>
+                : <button className="addItemBtn" id="addItem" onClick={this.toggleSection}>Add Item</button>}
+        </div>
 
       </div>
     )

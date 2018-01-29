@@ -26,10 +26,15 @@ input[type="checkbox"] {
 
 .bulk {
     order: 0;
-    background: rgb(248, 227, 193);
+    background: $bulkColor;
 }
 
 .shoppers {
     order: 2;
     background: $shoppersColor;
+}
+
+.empty {
+    // border: 3px solid rgb(247, 120, 46);
+    border: 3px solid $redColor;
 }

@@ -14,9 +14,11 @@ const GrocList = (props) =>  {
                 />
                 <label htmlFor={props.item.id}>
                     {props.item.currentItem} 
-                    <p className="itemDesc">
-                        {props.item.currentDescription ? `- ${props.item.currentDescription} ` : ''}{` - ${props.item.currentLocation}`}
-                    </p>
+                        {props.item.currentDescription ? <span className="itemDesc">- {props.item.currentDescription}</span> :''}
+                        <span className="itemDesc"> - {props.item.currentLocation}
+                        </span>
+                    
+                    
                 </label>
             </li> 
         );
