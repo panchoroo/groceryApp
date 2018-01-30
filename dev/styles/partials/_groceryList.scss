@@ -1,20 +1,20 @@
-/* grocery list styles */
+/* Grocery list styles */
 
 .groc {
     background: lighten($darkColor, 20);
     padding: 20px 20px 0 20px;
+
     li {
-        // height: 115px;
         margin-bottom: 20px;
         color: $lightColor;
         background: $darkColorOpaque;
-        // text-transform: capitalize;
+        padding: 15px;
+        
     }
 }
 
 input[type="checkbox"] {
-    margin: 25px 10px 0 0;
-    padding: 10px;
+    margin: 0px 10px 10px 5px;
 }
 
 .butcher {
@@ -42,7 +42,6 @@ input[type="checkbox"] {
 }
 
 .empty {
-    // border: 3px solid rgb(247, 120, 46);
     border: 3px solid $redColor;
     order: 0;
 }

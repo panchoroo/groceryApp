@@ -7,8 +7,8 @@ const PantryItem = (props) => {
             <li className={`${status}Order roundedCorners`}>
                 <div className={`${status} roundedCorners`}>
                     <p>{props.item.currentItem}
-                        <span className="itemDesc">{props.item.currentDescription ? `- ${props.item.currentDescription}` : ''}</span>
-                        <span className="itemLoc">{` - ${props.item.currentLocation}`}</span>
+                        <span className="itemDesc">{props.item.currentDescription ? `(${props.item.currentDescription})` : ''}</span>
+                        {/* <span className="itemLoc"> @ {props.item.currentLocation}</span> */}
                     </p>
                 </div>
                 

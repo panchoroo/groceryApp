@@ -37,31 +37,36 @@ $bulkColor: rgb(247, 144, 65);
 // $marketColor: rgb(182, 247, 225);
 // $butcherColor: rgb(182, 230, 247);
 
-html {
-    // background: darken($darkColor, 20);
-}
+// html {
+//     // background: darken($darkColor, 20);
+// }
 
 body {
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: .1rem;
     // background-image: url('http://weclipart.com/gimg/7F8CCA780CC15D89/pantry-clipart-Ride8zyi9.jpeg');
-    // Photo by ja ma on Unsplash
-    background-image: url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d060132f422f18d7fd59c4b5d0eb8e06&auto=format&fit=crop&w=1500&q=80');
-    background-position: top;
     // background-repeat: no-repeat;
     // background-size: 200vh;
+    
+    background-image: url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d060132f422f18d7fd59c4b5d0eb8e06&auto=format&fit=crop&w=1500&q=80');
+    // Photo by ja ma on Unsplash
+    background-position: top;
     color: darken($darkColorText, 20);
     min-height: 100vh;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+// div.groceryApp {
+//     min-height: 100vh;
+// }
 
 section {
     background: lighten($darkColor, 10);
     border: 5px solid $darkColor;
     padding: 20px;
-    // min-width: 33%;
-    // flex-shrink: 1;
     margin: 10px;
     width: 30%;
 }
@@ -72,44 +77,27 @@ ul {
     display: flex;
     flex-direction: column;
     padding: 20px 20px 0 20px;
-    // background: yellow;
     button {
         font-family: 'Open Sans', sans-serif;
         width: 100%;
     }
     li {
-        // border-radius: 5px;
         margin-bottom: 20px;
         list-style-type: none;
         text-transform: capitalize;
         font-size: 1.2rem;
+        
+
         p {
-            margin-bottom: 0;
+            margin: 0;
         }
-        // div {
-        //     border-radius: 5px;
-        // }
+
+        
     }
 }
 
-div.groceryApp, form  {
-    display: flex;
-    justify-content: center;
-}
-
-form {
-    flex-direction: column;
-    background: $darkColorOpaque;
-}
-
-form input {
-    max-width: 300px;
-    margin-bottom: 20px;
-    padding: 5px;
-}
-
-form div {
-    background: $lightColor;
+.roundedCorners {
+    border-radius: 5px;
 }
 
 .row {
@@ -148,7 +136,32 @@ button {
     display: none;
 }
 
-/* add Item styles */
+/* Add Item styles */
+
+.addItem .modal {
+    padding: 50px 20%;
+    background: rgba(19, 20, 22, 0.9);
+}
+
+div.groceryApp, form  {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    flex-direction: column;
+    // background: $darkColorOpaque;
+}
+
+form input {
+    max-width: 300px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+form div {
+    background: $lightColor;
+}
 
 .textInputs {
     display: flex;
@@ -156,6 +169,7 @@ button {
     flex-direction: column;
     padding: 20px;
     margin: 20px 0;
+
     input {
         border: 2px solid $darkColor;
         width: 100%;
@@ -170,7 +184,8 @@ button {
     align-content: space-between;
     min-height: 125px;
     flex-wrap: wrap;
-    background: lighten($darkColor, 20);
+    // background: lighten($darkColor, 20);
+    // background: $darkColor;
     margin-bottom: 20px;
     padding: 15px;
     font-size: 1.1rem;
@@ -193,42 +208,26 @@ button {
     }
 }
 
-// .itemDesc {
-//     margin: 10px 0 20px 30px;
-// }
+span {
+    color: darken($lightColor, 20);
+    margin-left: 10px;
 
-.addItem, 
-.instructions {
-    // min-width: 100%;
-    
-    
-    
-    
+    // &.itemDesc {
+    //     margin-left: 7px;
+    // }
 }
+
+/*  Instructions styles */
 
 .instructions h2 {   
     text-transform: uppercase;
 }
 
-// ol {
-//     background: $darkColorOpaque;
-// }
-
-// .instructions {
-//     left: 0;
-//     z-index: 2;
-
-// }
-// .addItem {
-//     right: 0;
-// }
-
 .instructionsList { 
     background: $darkColorOpaque;
     padding: 20px 20px 20px 40px;
-    color: white;
-    border: 1px solid white;
-
+    color: $lightColor;
+    border: 1px solid $lightColor;;
 }
 
 button[type="submit"] {
@@ -241,15 +240,16 @@ button[type="submit"] {
     top: 0;
     left: 0;
     width: 100%;
-    // height: calc(100vh - 56px);
     height: 100vh;
     padding: 20px;
-    // background: darken($darkColor, 40);
     background: $darkColorOpaque;
-    
-
 }
 
-.roundedCorners {
-    border-radius: 5px;
+footer {
+    text-align: center;
+    background: $darkColor;
+    color: darken($lightColor, 20);
+    span {
+        color: $lightColor;
+    }
 }

@@ -1,11 +1,23 @@
 /* pantry styles */
 
-.status {
-    background: yellowgreen;
+// .status {
+//     background: yellowgreen;
+// }
+
+.pantry {
+    li {
+        // padding: 0;
+    }
+    div.roundedCorners {
+        padding: 15px;
+        width: 100%;
+    }
 }
 
-.pantryUl, .textInputs {
-    background: lighten($darkColor, 20);
+
+.pantryUl, ul.groc, .textInputs {
+    // background: lighten($darkColor, 20);
+    background: $darkColor;
 }
 
 .pantryUl button {
@@ -31,8 +43,8 @@
     // padding-left: 20px;
     color: $lightColor;
     background: $darkColorOpaque;
-    span {
-        color: darken($lightColor, 10);
-    }
+    // span {
+    //     color: darken($lightColor, 20);
+    // }
 }
 

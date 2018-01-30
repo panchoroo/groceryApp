@@ -118,7 +118,7 @@ class App extends React.Component {
   
   render() {
     return (
-      <div className="groceryApp">
+      <div className="groceryApp" id="top">
             {/* <button className="instructionsBtn" id="instructions" onClick={this.toggleSection}>Instructions</button> */}
         <div className={`instructions`}>
             {this.state.instructionsSection ? 
@@ -173,6 +173,7 @@ class App extends React.Component {
         </div>
 
       </div>
+
     )
   }
 }
