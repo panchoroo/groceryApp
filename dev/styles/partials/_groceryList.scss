@@ -4,8 +4,11 @@
     background: lighten($darkColor, 20);
     padding: 20px 20px 0 20px;
     li {
-        height: 115px;
+        // height: 115px;
         margin-bottom: 20px;
+        color: $lightColor;
+        background: $darkColorOpaque;
+        // text-transform: capitalize;
     }
 }
 
@@ -15,26 +18,31 @@ input[type="checkbox"] {
 }
 
 .butcher {
-    order: 1;
-    background: $butcherColor;
+    order: 4;
+    // background: $butcherColor;
+    color: $butcherColor
 }
 
 .market {
     order: 3;
-    background: $marketColor;
+    // background: $marketColor;
+    color: $marketColor;
 }
 
 .bulk {
-    order: 0;
-    background: $bulkColor;
+    order: 1;
+    // background: $bulkColor;
+    color: $bulkColor;
 }
 
 .shoppers {
     order: 2;
-    background: $shoppersColor;
+    // background: $shoppersColor;
+    color: $shoppersColor;
 }
 
 .empty {
     // border: 3px solid rgb(247, 120, 46);
     border: 3px solid $redColor;
+    order: 0;
 }

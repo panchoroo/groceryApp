@@ -3,23 +3,35 @@
 // $darkColorText: rgb(31, 77, 194);
 // $darkColor: rgba(31, 77, 194, 0.85);
 $darkColorText: rgb(88, 94, 110);
-$darkColor: rgba(111, 115, 128, 0.548);
+// $darkColor: rgba(111, 115, 128, 0.548);
+$darkColor: rgba(19, 20, 22, 0.548);
+$darkColorOpaque: rgba(19, 20, 22, 0.8);
+// $darkColorOpaque: rgba(19, 20, 22, 0.9);
 $lightColor: white;
 // $fullColor: rgb(51, 117, 51);
-$fullColor: rgb(51, 117, 68);
 // $lowColor: rgb(239, 239, 117);
-$lowColor: rgb(250, 241, 110);
-$redColor:rgb(201, 91, 91);
+$fullColor: rgba(51, 117, 68, 0.76);
+$lowColor: rgba(250, 241, 110, 0.74);
+$redColor:rgba(201, 91, 91, 0.712);
 
 // $shoppersColor: rgba(226, 211, 255, 0.507);
 // $marketColor: rgba(200, 250, 232, 0.514);
 // $butcherColor: rgba(211, 245, 255, 0.514);
 // $bulkColor: rgba(248, 227, 193, 0.534);
 
-$shoppersColor: rgba(245, 200, 225, 0.9);
-$marketColor: rgba(170, 151, 221, 0.9);
-$butcherColor: rgba(165, 229, 238, 0.9);
-$bulkColor: rgb(240, 194, 157);
+$shoppersColor: rgba(247, 244, 107, 0.9);
+$marketColor: rgba(72, 207, 115, 0.9);
+$butcherColor: rgba(247, 78, 78, 0.9);
+$bulkColor: rgb(247, 144, 65);
+
+// $shoppersColor: white;
+// $marketColor: white;
+// $butcherColor: white;
+// $bulkColor: white;
+// $shoppersColor:rgba(19, 20, 22, 0.8);
+// $marketColor: rgba(19, 20, 22, 0.8);
+// $butcherColor: rgba(19, 20, 22, 0.8);
+// $bulkColor: rgba(19, 20, 22, 0.8);
 
 // $shoppersColor: rgb(225, 209, 248);
 // $marketColor: rgb(182, 247, 225);
@@ -32,6 +44,7 @@ html {
 body {
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
+    letter-spacing: .1rem;
     // background-image: url('http://weclipart.com/gimg/7F8CCA780CC15D89/pantry-clipart-Ride8zyi9.jpeg');
     // Photo by ja ma on Unsplash
     background-image: url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d060132f422f18d7fd59c4b5d0eb8e06&auto=format&fit=crop&w=1500&q=80');
@@ -40,21 +53,22 @@ body {
     // background-size: 200vh;
     color: darken($darkColorText, 20);
     min-height: 100vh;
+    
 }
 
 section {
-    // min-height: 100vh;
     background: lighten($darkColor, 10);
     border: 5px solid $darkColor;
     padding: 20px;
-    min-width: 33%;
-    flex-shrink: 1;
+    // min-width: 33%;
+    // flex-shrink: 1;
     margin: 10px;
+    width: 30%;
 }
 
 
 ul {
-    font-family: 'Satisfy', cursive;
+    // font-family: 'Satisfy', cursive;
     display: flex;
     flex-direction: column;
     padding: 20px 20px 0 20px;
@@ -64,12 +78,17 @@ ul {
         width: 100%;
     }
     li {
+        // border-radius: 5px;
         margin-bottom: 20px;
         list-style-type: none;
+        text-transform: capitalize;
         font-size: 1.2rem;
         p {
             margin-bottom: 0;
         }
+        // div {
+        //     border-radius: 5px;
+        // }
     }
 }
 
@@ -80,6 +99,7 @@ div.groceryApp, form  {
 
 form {
     flex-direction: column;
+    background: $darkColorOpaque;
 }
 
 form input {
@@ -104,6 +124,7 @@ form div {
 .addItemBtn, .instructionsBtn {
     margin: 20px;
     text-transform: uppercase;
+    background: $darkColorOpaque;
 }
 
 button.grocList, button.pantry {
@@ -112,6 +133,7 @@ button.grocList, button.pantry {
     width: 100%;
     max-width: 350px;
     text-transform: uppercase;
+    min-height: 150px;
 }
 
 button {
@@ -119,6 +141,7 @@ button {
     background: darken($darkColor, 10);
     color: $lightColor;
     border-radius: 10px;
+    letter-spacing: .1rem;
 }
 
 .hidden {
@@ -170,31 +193,38 @@ button {
     }
 }
 
-.itemDesc {
-    margin: 10px 0 20px 30px;
-}
+// .itemDesc {
+//     margin: 10px 0 20px 30px;
+// }
 
 .addItem, 
 .instructions {
     // min-width: 100%;
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    // padding: 20px;
-    background: $darkColor;
+    
+    
+    
     
 }
 
-.instructions {
-    left: 0;
-    z-index: 2;
-}
-.addItem {
-    right: 0;
+.instructions h2 {   
+    text-transform: uppercase;
 }
 
+// ol {
+//     background: $darkColorOpaque;
+// }
+
+// .instructions {
+//     left: 0;
+//     z-index: 2;
+
+// }
+// .addItem {
+//     right: 0;
+// }
+
 .instructionsList { 
-    background: $darkColor;
+    background: $darkColorOpaque;
     padding: 20px 20px 20px 40px;
     color: white;
     border: 1px solid white;
@@ -206,7 +236,20 @@ button[type="submit"] {
 }
 
 .modal {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: calc(100vh - 120px);
+    // height: calc(100vh - 56px);
+    height: 100vh;
+    padding: 20px;
+    // background: darken($darkColor, 40);
+    background: $darkColorOpaque;
+    
+
 }
 
+.roundedCorners {
+    border-radius: 5px;
+}

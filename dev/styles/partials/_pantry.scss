@@ -14,7 +14,8 @@
 
 .low {
     border: 2px solid $lowColor;
-    background: lighten($lowColor, 20);
+    
+    // background: lighten($lowColor, 20);
 }
 
 .lowOrder {
@@ -23,10 +24,15 @@
 
 .full {
     border: 2px solid lighten($fullColor, 10);
-    background: lighten($fullColor, 40);
+    // background: lighten($fullColor, 40);
 }
 
 .low, .full, .empty {
-    padding-left: 20px;
+    // padding-left: 20px;
+    color: $lightColor;
+    background: $darkColorOpaque;
+    span {
+        color: darken($lightColor, 10);
+    }
 }
 

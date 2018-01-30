@@ -26,8 +26,8 @@ class App extends React.Component {
       grocListSection: false, 
       pantrySection: false,
       instructionsSection: true,
-      hundoPInstr: 'hundoP',
-      hundoPAddItem: '',
+      // hundoPInstr: 'hundoP',
+      // hundoPAddItem: '',
     }
     this.addItem = this.addItem.bind(this);
     this.updateItem = this.updateItem.bind(this);
@@ -134,14 +134,14 @@ class App extends React.Component {
                 <li>Go shopping and click the items as you buy them</li> 
                 <p>When you check an item off your grocery list, it will automatically be removed from the list and added to your pantry (set to full)</p>
               </ol>
-            </div> : ''}
 
-          {this.state.instructionsSection ? <button className="instructionsBtn" id="instructions" onClick={this.toggleSection}>Close</button>
+              <button className="instructionsBtn" id="instructions" onClick={this.toggleSection}>Close</button>
+            </div> 
             : <button className="instructionsBtn" id="instructions" onClick={this.toggleSection}>Instructions</button>}
-          
+            
         </div>
 
-        <section className="grocList">
+        <section className={`grocList roundedCorners`}>
           <button className="grocList" id="grocList" onClick={this.toggleSection}>Grocery List</button>
           {this.state.grocListSection ? <ul className="groc"> 
               {this.state.pantry.map((food) => {
@@ -151,7 +151,7 @@ class App extends React.Component {
         </section>
 
 
-        <section className="pantry">
+        <section className={`pantry roundedCorners`}>
           <button className="pantry" id="pantry" onClick={this.toggleSection}>Pantry</button>    
           {this.state.pantrySection ? <ul className="pantryUl">
             {this.state.pantry.map((food) => {
@@ -162,13 +162,14 @@ class App extends React.Component {
 
         <div className={`addItem`}>
           {this.state.addItemSection ? 
-
+          
           <div className="modal">
             <PantryForm submitForm={this.addItem} /> 
-          </div> : ''}
 
-            {this.state.addItemSection ? <button className="addItemBtn" id="addItem" onClick={this.toggleSection}>Close</button>
-                : <button className="addItemBtn" id="addItem" onClick={this.toggleSection}>Add Item</button>}
+            <button className="addItemBtn" id="addItem" onClick={this.toggleSection}>Close</button>
+          </div> 
+          
+          : <button className="addItemBtn" id="addItem" onClick={this.toggleSection}>Add Item</button>}
         </div>
 
       </div>
