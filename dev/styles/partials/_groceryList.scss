@@ -9,7 +9,6 @@
         color: $lightColor;
         background: $darkColorOpaque;
         padding: 15px;
-        
     }
 }
 
@@ -19,25 +18,21 @@ input[type="checkbox"] {
 
 .butcher {
     order: 4;
-    // background: $butcherColor;
     color: $butcherColor
 }
 
 .market {
     order: 3;
-    // background: $marketColor;
     color: $marketColor;
 }
 
 .bulk {
     order: 1;
-    // background: $bulkColor;
     color: $bulkColor;
 }
 
 .shoppers {
     order: 2;
-    // background: $shoppersColor;
     color: $shoppersColor;
 }
 

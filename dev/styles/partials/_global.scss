@@ -1,53 +1,22 @@
 /* Global styles */
 
-// $darkColorText: rgb(31, 77, 194);
-// $darkColor: rgba(31, 77, 194, 0.85);
 $darkColorText: rgb(88, 94, 110);
-// $darkColor: rgba(111, 115, 128, 0.548);
 $darkColor: rgba(19, 20, 22, 0.548);
 $darkColorOpaque: rgba(19, 20, 22, 0.8);
-// $darkColorOpaque: rgba(19, 20, 22, 0.9);
 $lightColor: white;
-// $fullColor: rgb(51, 117, 51);
-// $lowColor: rgb(239, 239, 117);
 $fullColor: rgba(51, 117, 68, 0.76);
 $lowColor: rgba(250, 241, 110, 0.74);
 $redColor:rgba(201, 91, 91, 0.712);
-
-// $shoppersColor: rgba(226, 211, 255, 0.507);
-// $marketColor: rgba(200, 250, 232, 0.514);
-// $butcherColor: rgba(211, 245, 255, 0.514);
-// $bulkColor: rgba(248, 227, 193, 0.534);
 
 $shoppersColor: rgba(247, 244, 107, 0.9);
 $marketColor: rgba(72, 207, 115, 0.9);
 $butcherColor: rgba(247, 78, 78, 0.9);
 $bulkColor: rgb(247, 144, 65);
 
-// $shoppersColor: white;
-// $marketColor: white;
-// $butcherColor: white;
-// $bulkColor: white;
-// $shoppersColor:rgba(19, 20, 22, 0.8);
-// $marketColor: rgba(19, 20, 22, 0.8);
-// $butcherColor: rgba(19, 20, 22, 0.8);
-// $bulkColor: rgba(19, 20, 22, 0.8);
-
-// $shoppersColor: rgb(225, 209, 248);
-// $marketColor: rgb(182, 247, 225);
-// $butcherColor: rgb(182, 230, 247);
-
-// html {
-//     // background: darken($darkColor, 20);
-// }
-
 body {
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: .1rem;
-    // background-image: url('http://weclipart.com/gimg/7F8CCA780CC15D89/pantry-clipart-Ride8zyi9.jpeg');
-    // background-repeat: no-repeat;
-    // background-size: 200vh;
     
     background-image: url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d060132f422f18d7fd59c4b5d0eb8e06&auto=format&fit=crop&w=1500&q=80');
     // Photo by ja ma on Unsplash
@@ -59,13 +28,8 @@ body {
     justify-content: space-between;
 }
 
-// div.groceryApp {
-//     min-height: 100vh;
-// }
-
 section {
     background: lighten($darkColor, 10);
-    border: 5px solid $darkColor;
     padding: 20px;
     margin: 10px;
     width: 30%;
@@ -73,26 +37,24 @@ section {
 
 
 ul {
-    // font-family: 'Satisfy', cursive;
     display: flex;
     flex-direction: column;
     padding: 20px 20px 0 20px;
+
     button {
         font-family: 'Open Sans', sans-serif;
         width: 100%;
     }
+
     li {
         margin-bottom: 20px;
         list-style-type: none;
         text-transform: capitalize;
         font-size: 1.2rem;
-        
 
         p {
             margin: 0;
         }
-
-        
     }
 }
 
@@ -117,7 +79,6 @@ ul {
 
 button.grocList, button.pantry {
     font-size: 2.5rem;
-    // padding: 20px;
     width: 100%;
     max-width: 350px;
     text-transform: uppercase;
@@ -150,7 +111,7 @@ div.groceryApp, form  {
 
 form {
     flex-direction: column;
-    // background: $darkColorOpaque;
+    padding: 0 20px;
 }
 
 form input {
@@ -163,15 +124,16 @@ form div {
     background: $lightColor;
 }
 
-.textInputs {
+div.textInputs {
+    background: lighten($darkColor, 10);
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 20px;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
 
     input {
-        border: 2px solid $darkColor;
+        border: 2px solid lighten($darkColor, 20);
         width: 100%;
         margin: 0;
         padding: 5px;
@@ -179,31 +141,32 @@ form div {
 }
 
 .radio {
+    background: lighten($darkColor, 10);
     display: flex;
     justify-content: space-between;
     align-content: space-between;
     min-height: 125px;
     flex-wrap: wrap;
-    // background: lighten($darkColor, 20);
-    // background: $darkColor;
     margin-bottom: 20px;
     padding: 15px;
     font-size: 1.1rem;
 }
 
 .radioInput {
-    min-width: 125px;
     padding: 5px;
     display: flex;
-    justify-content: center;
-    align-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 20px;
     border: 2px solid lighten($darkColor, 10);
+    
     input {
-        margin: 0;
+        margin: 0 0 15px 0;
         align-self: center;
     }
+
     label {
-        margin-right: 8px;
+        margin: 8px;
         text-transform: capitalize;
     }
 }
@@ -211,10 +174,6 @@ form div {
 span {
     color: darken($lightColor, 20);
     margin-left: 10px;
-
-    // &.itemDesc {
-    //     margin-left: 7px;
-    // }
 }
 
 /*  Instructions styles */
@@ -249,6 +208,7 @@ footer {
     text-align: center;
     background: $darkColor;
     color: darken($lightColor, 20);
+    
     span {
         color: $lightColor;
     }

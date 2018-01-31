@@ -24,7 +24,7 @@ class PantryForm extends React.Component {
         e.preventDefault();
         console.log('submit')
         this.props.submitForm(this.state);
-        // reset the state after submitting 
+        
         this.setState({
             currentItem: '',
             currentDescription: '',
