@@ -12,26 +12,30 @@
     }
 }
 
+span.itemLoc {
+    text-transform: capitalize;
+}
+
 input[type="checkbox"] {
     margin: 0px 10px 10px 5px;
 }
 
-.butcher {
+.butcher, .Butcher {
     order: 4;
     color: $butcherColor
 }
 
-.market {
+.market, .Market {
     order: 3;
     color: $marketColor;
 }
 
-.bulk {
+.bulk, .Bulk {
     order: 1;
     color: $bulkColor;
 }
 
-.shoppers {
+.shoppers, .Shoppers {
     order: 2;
     color: $shoppersColor;
 }

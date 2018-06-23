@@ -7,7 +7,7 @@ class PantryForm extends React.Component {
             currentItem: '',
             currentDescription: '',
             currentStatus: 'full',
-            currentLocation: 'shoppers',
+            currentLocation: 'Shoppers',
             currentAutoBuy: true
         }
         this.handleChange = this.handleChange.bind(this);
@@ -96,7 +96,7 @@ class PantryForm extends React.Component {
                             type="radio"
                             id="currentLocation"
                             name="location"
-                            value="shoppers"
+                            value="Shoppers"
                             onChange={this.handleChange}
                             defaultChecked
                         />
@@ -107,7 +107,7 @@ class PantryForm extends React.Component {
                             type="radio"
                             id="currentLocation"
                             name="location"
-                            value="market"
+                            value="Market"
                             onChange={this.handleChange}
                         />
                     </div>
@@ -117,7 +117,7 @@ class PantryForm extends React.Component {
                             type="radio"
                             id="currentLocation"
                             name="location"
-                            value="bulk"
+                            value="Bulk"
                             onChange={this.handleChange}
                         />
                     </div>
@@ -127,7 +127,7 @@ class PantryForm extends React.Component {
                             type="radio"
                             id="currentLocation"
                             name="location"
-                            value="butcher"
+                            value="Butcher"
                             onChange={this.handleChange}
                         />
                     </div>

@@ -1,5 +1,24 @@
 /* media queries styles */
 
+@media (max-width: 1070px) { 
+    %menuButtons {
+        position: absolute;
+        right: 0;
+        top: 80px;
+    }
+    
+    .addItem {
+        @extend %menuButtons;
+    }
+
+    .instructions {
+        order: 10;
+        @extend %menuButtons;
+        top: 20px;
+    }
+}
+
+
 @media (max-width: 1040px) { 
     .radio {
         justify-content: center;
